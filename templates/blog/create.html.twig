@@ -1,11 +1,23 @@
 {% extends 'base.html.twig' %}
 
+{# {% form_theme form 'bootstrap_5_layout.html.twig' %} #}
+
 {% block body %}
   <h1>Création d'un Article </h1>
-   <form action="" method="post">
-      <input type="text" name="text" placeholder="title">
-      <textarea name="content" placeholder="Contenue de l'article"></textarea>
-      <input type="text" name="image" placeholder="image de l'article">
-      <button type="submit">Enregistrer</button>
-   </form>
+       
+        {{ form_start(formArticle) }}
+           {# {{ form_widget(formArticle) }} #}
+           {{ form_row(formArticle.title, { 'attr': {'label': 'Titre', 'Placeholder': "Titre de l'article" } }) }}
+           {{ form_row(formArticle.category) }}
+           {{ form_row(formArticle.Content, { 'attr': {'label': 'Titre', 'Placeholder': "Contenue de l'article"} }) }}
+           {{ form_row(formArticle.imageFile) }}
+           <button type="submit" class="btn btn-success">
+           {% if editMode %}
+              Enregistrer
+           {% else %}
+           Ajouter l'article
+           {% endif %}
+           </button>
+        {{ form_end(formArticle) }}
+   {# {{ form(formArticle) }} #}
 {% endblock %}

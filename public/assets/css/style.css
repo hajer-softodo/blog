@@ -1,0 +1,15 @@
+
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    form {
+        position: relative;
+    }
+    form .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 65px;
+    }
+
+        
